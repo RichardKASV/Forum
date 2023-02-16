@@ -25,6 +25,7 @@
               "src/assets"
             ],
             "styles": [
+              "src/custom-theme.scss",
               "src/styles.css"
             ],
             "scripts": []
@@ -51,7 +52,13 @@
               "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
-              "namedChunks": true
+              "namedChunks": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.development.ts"
+                }
+              ]
             }
           },
           "defaultConfiguration": "production"
@@ -91,8 +98,22 @@
             ],
             "scripts": []
           }
+        },
+        "proxyConfig": "proxy.conf.json",
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "forum:build:production",
+            "firebaseProject": "thedebatehub-78b9d",
+            "firebaseHostingSite": "thedebatehub-78b9d"
+          }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }
