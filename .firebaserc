@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "thedebatehub-78b9d"
+  },
+  "targets": {
+    "thedebatehub-78b9d": {
+      "hosting": {
+        "forum": [
+          "thedebatehub-78b9d"
+        ]
+      }
+    }
+  }
+}

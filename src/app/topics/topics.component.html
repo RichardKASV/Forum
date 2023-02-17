@@ -1,0 +1,90 @@
+<main class="flex mb-10" >
+  <section class="flex gap-2 text-sm text-gray-700">
+    <a class="rounded-2xl bg-gray-300 transition hover:bg-blue-500 hover:text-white" href="">
+      <section class="flex items-center px-3 py-1 gap-1">
+        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="schedule"></mat-icon>
+        <h1>New</h1>
+      </section>
+    </a>
+    <a class="rounded-2xl bg-gray-300 transition hover:bg-blue-500 hover:text-white" href="">
+      <section class="flex items-center px-3 py-1 gap-1">
+        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="call_made"></mat-icon>
+        <h1>Top</h1>
+      </section>
+    </a>
+    <a class="rounded-2xl bg-gray-300 transition hover:bg-blue-500 hover:text-white" href="">
+      <section class="flex items-center px-3 py-1 gap-1">
+        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="whatshot"></mat-icon>
+        <h1>Hot</h1>
+      </section>
+    </a>
+    <a class="rounded-2xl bg-gray-300 transition hover:bg-blue-500 hover:text-white" href="">
+      <section class="flex items-center px-3 py-1 gap-1">
+        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="check_circle_outline"></mat-icon>
+        <h1>Closed</h1>
+      </section>
+    </a>
+  </section>
+</main>
+
+
+<a href="" routerLink="/ranking" routerLinkActive="active">
+
+<section class="flex flex-col bg-gray-200 shadow-xl rounded-md border p-4 mb-5"  *ngFor="let data of _topicModel; let i = index;">
+  <section class="flex gap-2 items-center">
+    <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="person_pin"></mat-icon>
+    <section>
+      <h1>{{data.user}}</h1>
+      <h1 class="text-sm">{{data.time}}</h1>
+    </section>
+  </section>
+  <section class="flex flex-col py-6 gap-2">
+    <h1>{{data.headline}}</h1>
+    <h1>{{data.content}}</h1>
+  </section>
+
+  <section class="flex justify-between">
+    <section class="flex">
+      <section class="flex gap-2 text-sm text-gray-700">
+        <a class="rounded-2xl bg-gray-300 transition hover:bg-blue-500 hover:text-white" href="">
+          <section class="flex items-center px-3 py-1 gap-1">
+            <h1>New</h1>
+          </section>
+        </a>
+        <a class="rounded-2xl bg-gray-300 transition hover:bg-blue-500 hover:text-white" href="">
+          <section class="flex items-center px-3 py-1 gap-1">
+            <h1>Top</h1>
+          </section>
+        </a>
+        <a class="rounded-2xl bg-gray-300 transition hover:bg-blue-500 hover:text-white" href="">
+          <section class="flex items-center px-3 py-1 gap-1">
+            <h1>Hot</h1>
+          </section>
+        </a>
+      </section>
+    </section>
+
+    <section class="flex gap-2">
+      <section class="flex items-center text-xs text-gray-500">
+        <a class="flex items-center" (click)="addLikes()">
+        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="thumb_up"></mat-icon>
+        <span>{{data.likes}}</span>
+        </a>
+      </section>
+
+      <section class="flex items-center text-xs text-gray-500">
+        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="thumb_down"></mat-icon >
+        <h1>0</h1>
+      </section>
+
+      <section class="flex items-center text-xs text-gray-500">
+        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="comment"></mat-icon>
+        <h1>0</h1>
+      </section>
+
+
+
+    </section>
+  </section>
+</section>
+</a>
