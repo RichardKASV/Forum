@@ -1,0 +1,54 @@
+<div class="px-10 grid grid-cols-4 grid-rows-6">
+  <app-header class="col-start-1 col-end-5 row-start-1 row-end-2"></app-header>
+  <app-nav class="col-start-1 col-end-2 row-start-2 shrink w-64 row-end-2"></app-nav>
+  <section class="col-start-2 col-end-4 row-start-2 row-end-4">
+    <section class="flex flex-col border bg-gray-200 shadow-xl border-radius: 10px">
+      <section class="flex flex-col border-gray-500 p-2 gap-4 m-4">
+        <mat-form-field appearance="fill">
+          <mat-label>Select category</mat-label>
+          <mat-select [(ngModel)]="category">
+            <mat-option *ngFor="let categories of categoriesList" [value]="categories">
+              {{categories}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </section>
+      <section class="flex placeholder-gray-200 p-2 text-xl gap-2 m-3 box-sizing: border-box" >
+
+        <input type="text" name="headline" id="headline" placeholder="Title" size="74" class="block p-2.5 w-full text-xl rounded-lg focus:ring-blue-500 focus:border-blue-500
+    dark:border-gray-600
+    dark:placeholder-gray-400 dark:text-dark dark:focus:ring-blue-500 dark:focus:border-blue-500" [(ngModel)]="headline">
+      </section>
+      <section class="flex p-2 text-xl gap-2 m-3 border-gray-500 box-sizing: border-box">
+    <textarea id="message" rows="4" class="block p-2.5 w-full text-xl rounded-lg focus:ring-blue-500 focus:border-blue-500
+    dark:border-gray-600
+    dark:placeholder-gray-400 dark:text-dark dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder="Write your thoughts here..."
+              [(ngModel)]="content">
+    </textarea>
+      </section>
+      <section class="flex justify-between py-2 items-center m-3 ">
+        <a class="" >
+          <section class="rounded-md bg-blue-500 text-white flex justify-center items-center px-6 py-2 gap-2 hover:bg-blue-600">
+            <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="perm_media"></mat-icon>
+            <input #fileInput type="file" (change)="onFileSelected($event)" style="display:none">
+            <button type="button" (click)="fileInput.click()">Add Image</button>
+            <input #fileInput type="file" (change)="onFileSelected($event)" style="display:none" multiple>
+
+          </section>
+          <div id="image-container"></div>
+        </a>
+        <a class="" href="#">
+          <section class="rounded-md bg-orange-500 text-white flex justify-center items-center px-6 py-2 gap-2 hover:bg-orange-600" (click)="addNewPost()">
+            <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="send"></mat-icon>
+            <h1>Publish</h1>
+          </section>
+        </a>
+      </section>
+      <section *ngIf="postTime">
+      <p>Post time: {{ formatTime(postTime) }}</p>
+    </section>
+    </section>
+  </section>
+
+</div>

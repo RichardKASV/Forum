@@ -1,0 +1,13 @@
+<app-movies-category *ngIf="prepinac=='movies'"></app-movies-category>
+<app-cars-category *ngIf="prepinac=='cars'"></app-cars-category>
+<app-books-category *ngIf="prepinac=='books'"></app-books-category>
+<app-food-category *ngIf="prepinac=='food'"></app-food-category>
+<app-games-category *ngIf="prepinac=='games'"></app-games-category>
+<app-programming-category *ngIf="prepinac=='programming'"></app-programming-category>
+<section *ngIf="prepinac=='all'">
+  <app-movies-category></app-movies-category>
+  <app-cars-category></app-cars-category>
+  <app-books-category></app-books-category>
+  <app-food-category></app-food-category>
+  <app-games-category></app-games-category>
+</section>
