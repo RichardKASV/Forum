@@ -40,9 +40,10 @@ import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 
 
+
 const appRoutes: Routes = [
   {path: '', component: HomeComponent,},
-  {path: 'new-post', component: NewPostComponent,canActivate:[AuthGuard]},
+  {path: 'new-post', component: NewPostComponent,},
   {path: 'ranking', component: OpenPostComponent,},
   {path: '**', component: AppComponent,},
   {path: 'login',component:LoginComponent,},

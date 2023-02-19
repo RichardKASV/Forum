@@ -16,7 +16,4 @@
       this.afAuth.signOut();
     }
 
-    signup() {
-
-    }
   }
