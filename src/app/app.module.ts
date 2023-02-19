@@ -38,7 +38,7 @@ import { AuthGuard } from "./services/auth.guard";
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
-
+import { AppRoutingModule} from "./app-routing.module";
 
 
 const appRoutes: Routes = [
@@ -74,6 +74,7 @@ const appRoutes: Routes = [
     SwitchCategoriesComponent,
     SignupComponent,
     LoginComponent,
+
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebase),
@@ -93,6 +94,7 @@ const appRoutes: Routes = [
     MatButtonModule,
     MatCardModule,
     MatInputModule,
+    AppRoutingModule,
 
     CommonModule // import CommonModule
   ],
