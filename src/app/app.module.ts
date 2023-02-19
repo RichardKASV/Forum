@@ -43,7 +43,7 @@ import { AppRoutingModule} from "./app-routing.module";
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent,},
-  {path: 'new-post', component: NewPostComponent,},
+  {path: 'new-post', component: NewPostComponent,canActivate:[AuthGuard]},
   {path: 'ranking', component: OpenPostComponent,},
   {path: '**', component: AppComponent,},
   {path: 'login',component:LoginComponent,},
