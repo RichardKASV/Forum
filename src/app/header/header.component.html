@@ -1,9 +1,33 @@
 <nav class="flex justify-between py-2 items-center">
+  <a class="" href="#">
+    <section routerLink="/login" class="rounded-md bg-orange-500 text-white flex justify-left items-center px-6 py-2 gap-2 hover:bg-orange-700">
+      <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="person_add"></mat-icon>
+      <h1>Login</h1>
+    </section>
+    <br>
+    <div *ngIf="(afAuth.user|async)">
+      User is logged in!
+      <br>
+      <section  class="rounded-md bg-orange-500 text-white flex justify-left items-center px-6 py-2 gap-2 hover:bg-orange-700" (click)="logout()">
+        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="person_add"></mat-icon>
+        <h1>Logout</h1>
+      </section>
+    </div>
+    <div *ngIf="!(afAuth.user|async)">
+      User is not logged in!
+    </div>
+
+  <section routerLink="/signup" class="rounded-md bg-orange-500 text-white flex justify-left items-center px-6 py-2 gap-2 hover:bg-orange-700" (click)="signup()">
+    <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="person_add"></mat-icon>
+    <h1>Sign up</h1>
+  </section>
+</a>
   <section>
     <img class="w-40 h-20" src="assets/logo.png">
   </section>
+
   <a class="" routerLink="/new-post" routerLinkActive="active">
-    <section class="rounded-md bg-orange-500 text-white flex justify-center items-center px-6 py-2 gap-2">
+    <section class="rounded-md bg-orange-500 text-white flex justify-center items-center px-6 py-2 gap-2 hover:bg-orange-700">
       <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="library_add"></mat-icon>
       <h1>New Post</h1>
     </section>
