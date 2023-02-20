@@ -21,24 +21,31 @@
         </a>
       </section>
     </section>
+    <section class="flex justify-between">
+      <section class="flex">
+        <button class="px-6 py-2 bg-orange-500 hover:bg-orange-600 text-white rounded-md shadow-sm transition duration-300 ease-in-out"routerLink="/comment" routerLinkActive="active">Show comments</button>
 
-    <section class="flex gap-2">
-      <section class="flex items-center text-xs text-gray-500">
-        <a class="flex items-center" (click)="addLikes()">
-          <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="thumb_up"></mat-icon>
-          <span>{{data.likes}}</span>
-        </a>
       </section>
 
-      <section class="flex items-center text-xs text-gray-500">
-        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="thumb_down"></mat-icon >
-        <h1>0</h1>
-      </section>
-
-      <section class="flex items-center text-xs text-gray-500">
-        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="comment"></mat-icon>
-        <h1>0</h1>
-      </section>
     </section>
+
+<!--    <section class="flex gap-2">-->
+<!--      <section class="flex items-center text-xs text-gray-500">-->
+<!--        <a class="flex items-center" (click)="addLikes()">-->
+<!--          <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="thumb_up"></mat-icon>-->
+<!--          <span>{{data.likes}}</span>-->
+<!--        </a>-->
+<!--      </section>-->
+
+<!--      <section class="flex items-center text-xs text-gray-500">-->
+<!--        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="thumb_down"></mat-icon >-->
+<!--        <h1>0</h1>-->
+<!--      </section>-->
+
+<!--      <section class="flex items-center text-xs text-gray-500">-->
+<!--        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="comment"></mat-icon>-->
+<!--        <h1>0</h1>-->
+<!--      </section>-->
+<!--    </section>-->
   </section>
 </section>

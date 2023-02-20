@@ -1,6 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {AngularFireDatabase} from "@angular/fire/compat/database";
 import {Topic} from "../model/topic.model";
+import { Router } from '@angular/router';
+
+
+
 
 @Component({
   selector: 'app-books-category',
@@ -9,11 +13,13 @@ import {Topic} from "../model/topic.model";
 })
 export class BooksCategoryComponent implements OnInit {
 
+
   public _topicModel:Topic[] | undefined;
   likes:number | undefined;
-  constructor(private db: AngularFireDatabase) {
-    // this.db.object("data/post3").set({content:"čus",headline:"motorky",time:21.8,user:"marienka"}); //pridavať nove posty
+  constructor(private db: AngularFireDatabase, private router: Router) {
+
   }
+
 
   ngOnInit() {
     this.getTopics();

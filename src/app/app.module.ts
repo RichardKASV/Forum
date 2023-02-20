@@ -9,8 +9,8 @@ import { TopicsComponent } from './topics/topics.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NewPostComponent } from './new-post/new-post.component';
-import { Post2Component} from "./post2/post2.component";
-import { PostComponent} from "./post/post.component";
+
+
 import { RouterModule, Routes} from "@angular/router";
 import { HomeComponent } from './home/home.component';
 import { AngularFireModule} from "@angular/fire/compat";
@@ -44,7 +44,7 @@ import { AppRoutingModule} from "./app-routing.module";
 const appRoutes: Routes = [
   {path: '', component: HomeComponent,},
   {path: 'new-post', component: NewPostComponent,canActivate:[AuthGuard]},
-  {path: 'ranking', component: OpenPostComponent,},
+  {path: 'comment', component: OpenPostComponent,},
   {path: '**', component: AppComponent,},
   {path: 'login',component:LoginComponent,},
   {path: 'signup',component:SignupComponent,},
@@ -59,8 +59,8 @@ const appRoutes: Routes = [
     TopicsComponent,
     SidebarComponent,
     NewPostComponent,
-    Post2Component,
-    PostComponent,
+
+
     HomeComponent,
     OpenPostComponent,
     CommentComponent,

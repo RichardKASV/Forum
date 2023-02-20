@@ -4,6 +4,7 @@ import { Post } from '../post-service/post';
 import {FormControl} from "@angular/forms";
 import * as uuid from 'uuid';
 
+
 @Component({
   selector: 'app-new-post',
   templateUrl: './new-post.component.html',
