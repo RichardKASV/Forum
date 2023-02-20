@@ -78,7 +78,7 @@ export class NewPostComponent {
       user: email ?? "",
       id: uuid.v4()
     };
-    this.postService.addPost(post,post.category);
+    this.postService.addPost(post, this.category);
   }
 
   formatTime(timestamp: Date): string {

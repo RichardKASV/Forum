@@ -1,27 +1,32 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/compat/database';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Observable } from 'rxjs';
-import { Post } from './post';
+import {OpenPostComponent} from "../open-post/open-post.component";
+
 import { v4 as uuidv4 } from 'uuid';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PostService {
-  posts: Observable<any[]> | undefined;
+  post: Observable<any> | undefined;
+  comments: Observable<any[]> | undefined;
 
-  constructor(public afAuth: AngularFireAuth, public db: AngularFireDatabase) {
-  }
+  constructor(public db: AngularFireDatabase) {}
 
-  getPosts(category: string): Observable<any[]> {
-    this.posts = this.db.list("data/" + category, ref => ref.orderByChild('time')).valueChanges();
-    return this.posts;
+  getPost(id: string): Observable<any> {
+    this.post = this.db.object(`data/posts/${id}`).valueChanges();
+    return this.post;
   }
 
   addPost(post: any, category: string) {
     post.time = post.time.getTime();
-    post.id = uuidv4(); // pridanie id do príspevku
-    this.db.list("data/"+category).push(post);
+    post.id = uuidv4();
+    this.db.list(`data/${category}`).push(post);
   }
+  getCommentsForPost(postId: string): Observable<any[]> {
+    this.comments = this.db.list(`data/comments/${postId}`).valueChanges();
+    return this.comments;
+  }
+
 }
