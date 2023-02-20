@@ -1,0 +1,42 @@
+<div class="px-10 grid grid-cols-3 grid-rows-6">
+  <app-header class="col-start-1 col-end-5 row-start-1 row-end-2"></app-header>
+  <section class="col-start-2 col-end-2 row-start-2 row-end-6 mt-4">
+    <section class="flex flex-col border bg-gray-200 shadow-xl border-radius: 10px">
+
+<mat-card>
+  <form [formGroup]="signupForm" (ngSubmit)="signup()">
+    <div class="flex justify-center items-center px-3 py-2 m-2 gap-2">
+      <a routerLink="/home" class=" w-3/12 rounded-md bg-orange-500 text-white flex justify-center py-2 m-4 gap-3 hover:bg-orange-700">
+        <h1 class="">Home</h1>
+      </a>
+    </div>
+    <div class="flex justify-center items-center mt-4">
+
+    <mat-form-field appearance="fill">
+      <mat-label>Full Name</mat-label>
+      <input autocomplete="off" formControlName="displayName" type="text" matInput placeholder="Display Name">
+    </mat-form-field>
+    </div>
+    <div class="flex justify-center items-center">
+    <mat-form-field appearance="fill">
+      <mat-label>Email</mat-label>
+      <input formControlName="email" type="email" matInput placeholder="Email" required email>
+    </mat-form-field>
+    </div>
+    <div class="flex justify-center items-center ">
+    <mat-form-field appearance="fill">
+      <mat-label>Password</mat-label>
+      <input autocomplete="off" formControlName="password" type="password" matInput placeholder="Password">
+    </mat-form-field>
+    </div>
+    <div *ngIf="firebaseErrorMessage != ''" class="error-style">
+      <span>{{ firebaseErrorMessage }}</span>
+    </div>
+    <div class="flex justify-center items-center px-6 py-2 m-5 gap-2">
+    <button mat-raised-button color="primary" type="submit">Signup</button>
+    </div>
+  </form>
+</mat-card>
+    </section>
+  </section>
+</div>

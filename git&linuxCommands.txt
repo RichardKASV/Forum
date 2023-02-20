@@ -1,0 +1,43 @@
+chmoGit commands/Unix
+ls - Use ls to list the contents of yout current directory
+ls git2022 - ukáže čo je v zložke git2022
+ls git2022/Math - ukáže čo je v Math v priečinku git2022
+ls -a - ukáže všetko v priečinku aj skryté zložky
+start . - It opens files and folder and you can choose one of them
+clear - vymaže všetko v cmd/gitBash
+pwd - Prints the path to the working directory(where you currently are) - print working directory
+cd - Use cd to change and move between folders
+cd .. - Use cd .. to "back up" one directory
+cd / - takes you to the root directory
+touch - Use touch to create a file (or multiple)
+touch hry.txt - vytvorí textový blok s názvom hry
+touch Games/gamesky.txt - vytvorí textový blok v zložke Games
+mkdir - will create a new directory (or directories), creates new folder 
+mkdir RocketLeague - vytvorí priečinok RocketLeague
+mkdir cars bikes - vytvorí dve priečunky cars a bike
+rmdir - delete an empty folder
+rm -r folder name - deletes non-empty folders
+rm - rm will delete a file or files.. It permanently removes them. Nevymaže to priečinky
+rm hry.txt - vymaže hry.txt
+rm -rf - use rm -rf tp delete a directory (r - recursive, f - force) It permanently removes them.
+rm -rf RocketLeague - vymaže priečinok RocketLeague
+cp - copy files
+cp example /home/students1n/sekerakt - skopiruje example do students1n/sekerakt
+man name of the command - ukáže čo sa dá robit s danym prikazom
+cat - shows the content of a file
+df - displays the free space
+mv - moves files from a source to a destination
+uname - linux command to get basic information about the OS
+passwd - create or update passwords ffor existing users
+useradd and usermod - add a new user or change existing user data
+
+
+chmod - changes the mode of a file/command to change file permissions
+rwx - read, write, execute(user-u, group-g, others-o/all-a)
+read-4 write-2 execute-1
+1) chmod 2,3,4 subor.txt
+2) chmod u=rx, go=rw subor.txt
+3) chmod g+w, o-rw subot.txt
+4) chmod 777 - u-rwx g-rwx o-rwx
+
+pozriet si JASON

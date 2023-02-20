@@ -1,0 +1,52 @@
+<section class="flex flex-col bg-gray-200 shadow-xl rounded-md border p-4 mb-5"  *ngFor="let data of _topicModel?.reverse(); let i = index;">
+  <section class="flex gap-2 items-center">
+    <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="person_pin"></mat-icon>
+    <section>
+      <h1>{{data.user}}</h1>
+      <h1 class="text-sm">{{data.day}}.{{data.month}}.{{data.year}}</h1>
+    </section>
+  </section>
+  <section class="flex flex-col py-6 gap-2">
+    <h1 class="font-bold text-lg">{{data.headline}}</h1>
+    <h1>{{data.content}}</h1>
+  </section>
+
+  <section class="flex justify-between">
+    <section class="flex ">
+      <section class="flex gap-2 text-sm text-gray-700">
+        <a class="rounded-2xl bg-gray-300 transition hover:bg-blue-500 hover:text-white" href="">
+          <section class="flex items-center px-3 py-2.5 gap-1">
+            <h1 class="">{{data.category}}</h1>
+          </section>
+        </a>
+      </section>
+    </section>
+    <section class="flex justify-between">
+    <section class="flex">
+      <button class="px-6 py-2 bg-orange-500 hover:bg-orange-600 text-white rounded-md shadow-sm transition duration-300 ease-in-out"routerLink="/comment" routerLinkActive="active">Show comments</button>
+
+    </section>
+
+  </section>
+
+
+<!--    <section class="flex gap-2">-->
+<!--      <section class="flex items-center text-xs text-gray-500">-->
+<!--&lt;!&ndash;        <a class="flex items-center" (click)="addLikes()">&ndash;&gt;-->
+<!--&lt;!&ndash;          <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="thumb_up"></mat-icon>&ndash;&gt;-->
+<!--&lt;!&ndash;            <span>{{data.likes}}</span>&ndash;&gt;-->
+<!--&lt;!&ndash;        </a>&ndash;&gt;-->
+<!--      </section>-->
+
+<!--&lt;!&ndash;      <section class="flex items-center text-xs text-gray-500">&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="thumb_down"></mat-icon >&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        <h1>0</h1>&ndash;&gt; mby later&ndash;&gt;-->
+<!--&lt;!&ndash;      </section>&ndash;&gt;-->
+
+<!--&lt;!&ndash;      <section class="flex items-center text-xs text-gray-500">&ndash;&gt;-->
+<!--&lt;!&ndash;        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="comment"></mat-icon>&ndash;&gt;-->
+<!--&lt;!&ndash;        <h1>0</h1>&ndash;&gt;-->
+<!--&lt;!&ndash;      </section>&ndash;&gt;-->
+<!--    </section>-->
+  </section>
+</section>

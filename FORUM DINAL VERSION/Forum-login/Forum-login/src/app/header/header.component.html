@@ -1,0 +1,37 @@
+<nav class="bg-gray-100 shadow-sm py-2 flex">
+  <div class="container mx-auto flex justify-between items-center">
+    <div class="flex justify-start items-center">
+      <a *ngIf="currentRoute !== '/new-post'" routerLink="/login" class="rounded-md bg-orange-500 text-white flex justify-center items-center px-6 py-2 gap-2 hover:bg-orange-700">
+        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="login"></mat-icon>
+        <h1 class="ml-2">Login</h1>
+      </a>
+      <a *ngIf="currentRoute !== '/new-post'" routerLink="/signup" class="ml-4 rounded-md bg-orange-500 text-white flex justify-center items-center px-6 py-2 gap-2 hover:bg-orange-700">
+        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="person_add"></mat-icon>
+        <h1 class="ml-2">Sign up</h1>
+      </a>
+    </div>
+
+    <div class="flex justify-center items-center">
+      <img class="w-40 h-20" src="assets/logo.png">
+    </div>
+
+    <div class="flex justify-end items-center">
+      <a *ngIf="currentRoute !== '/new-post'" routerLink="/new-post" class="rounded-md bg-orange-500 text-white flex justify-center items-center px-6 py-2 gap-2 hover:bg-orange-700">
+        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="library_add"></mat-icon>
+        <h1 class="ml-2">New Post</h1>
+      </a>
+      <div *ngIf="(afAuth.user|async)">
+<!--        <p class="text-gray-600 ml-4">User is logged in!</p>-->
+        <button *ngIf="currentRoute !== '/new-post'" class="ml-4 rounded-md bg-orange-500 text-white flex justify-center items-center px-6 py-2 gap-2 hover:bg-orange-700" (click)="logout()">
+          <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="logout"></mat-icon>
+          <h1 class="ml-2">Logout</h1>
+        </button>
+      </div>
+      <div *ngIf="!(afAuth.user|async)">
+<!--        <p class="text-gray-600 ml-4">User is not logged in!</p>-->
+      </div>
+    </div>
+  </div>
+</nav>
+
+
