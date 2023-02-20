@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { PostService } from '../post-service/post.service';
 import { Post } from '../post-service/post';
 import {FormControl} from "@angular/forms";
+import * as uuid from 'uuid';
 
 @Component({
   selector: 'app-new-post',
@@ -19,11 +20,14 @@ export class NewPostComponent {
   year: number = this.myDate.getFullYear();
 
 
+
+
   constructor(private postService: PostService) {}
   categoriesList: string[] = ['Cars','Food','Books','Movies','Games','Programming'];
   onFileSelected(event: any) {
     const files: FileList = event.target.files;
     const imageContainer = document.getElementById('image-container');
+
 
     if (imageContainer) {
       for (let i = 0; i < files.length; i++) {
@@ -60,6 +64,7 @@ export class NewPostComponent {
   }
 
   addNewPost() {
+    let email =  localStorage.getItem('email')
     const post: Post = {
       headline: this.headline,
       content: this.content,
@@ -69,7 +74,8 @@ export class NewPostComponent {
       day: this.day,
       month: this.month,
       year: this.year,
-      user: 'Test User'
+      user: email ?? "",
+      id: uuid.v4()
     };
     this.postService.addPost(post,post.category);
   }

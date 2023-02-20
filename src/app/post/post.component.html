@@ -1,8 +1,8 @@
 <div *ngIf="posts.length > 0">
   <div *ngFor="let post of posts">
-    <h1>{{ post.headline }}</h1>
+    <a [routerLink]="['/ranking']" [queryParams]="{postId: post.id}" class="post-header">{{ post.headline }}</a>
     <p>{{ post.content }}</p>
-    <button (click)="toggleComments({post : post})">Show comments</button>
+    <button (click)="toggleComments(post)">Show comments</button>
     <div *ngIf="post.showComments">
       <app-comment [postId]="post.id"></app-comment>
     </div>
