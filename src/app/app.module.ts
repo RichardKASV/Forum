@@ -9,8 +9,6 @@ import { TopicsComponent } from './topics/topics.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NewPostComponent } from './new-post/new-post.component';
-
-
 import { RouterModule, Routes} from "@angular/router";
 import { HomeComponent } from './home/home.component';
 import { AngularFireModule} from "@angular/fire/compat";
@@ -39,15 +37,18 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { AppRoutingModule} from "./app-routing.module";
+import { CategoriesComponent } from './categories/categories.component';
 
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent,},
+  {path: 'home', component: HomeComponent,},
   {path: 'new-post', component: NewPostComponent,canActivate:[AuthGuard]},
   {path: 'comment', component: OpenPostComponent,},
   {path: '**', component: AppComponent,},
   {path: 'login',component:LoginComponent,},
   {path: 'signup',component:SignupComponent,},
+  {path: 'categories',component:CategoriesComponent,}
 
 ];
 
@@ -59,8 +60,6 @@ const appRoutes: Routes = [
     TopicsComponent,
     SidebarComponent,
     NewPostComponent,
-
-
     HomeComponent,
     OpenPostComponent,
     CommentComponent,
@@ -74,6 +73,7 @@ const appRoutes: Routes = [
     SwitchCategoriesComponent,
     SignupComponent,
     LoginComponent,
+    CategoriesComponent,
 
   ],
   imports: [
